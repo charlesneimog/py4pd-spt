@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-Esta é uma simples e básica biblioteca de Rastreamento Parcial (Partial Tracking) escrita em Python.
+Básica biblioteca de Rastreamento Parcial (Partial Tracking) escrita em Python.
 </p>
 
 <h2 align="center">Instalação</h2>
