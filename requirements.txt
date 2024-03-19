@@ -1,0 +1,6 @@
+math
+librosa
+loristrck
+numpy
+pandas
+scipy
