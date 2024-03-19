@@ -1,4 +1,4 @@
-#N canvas 963 31 951 1011 10;
+#N canvas 483 556 474 486 10;
 #X obj 7 112 py4pd -lib py4pd-spt;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array samples 281650 float 4;
@@ -9,7 +9,7 @@
 #X obj 93 282 soundfiler;
 #X msg 7 153 samples;
 #X obj 7 250 dac~;
-#N canvas 11 44 944 478 spearSynth 0;
+#N canvas 6 556 471 486 spearSynth 1;
 #X obj 5 5 inlet;
 #X obj 5 78 outlet~;
 #X msg 46 27 reload;
