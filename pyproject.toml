@@ -1,0 +1,21 @@
+[project]
+name = "py4pd-spt" 
+version = "1.0"  
+description = "A simple partial tracking library."
+dependencies = [
+    "librosa",
+	"scipy",
+]
+
+[project.urls]
+"Source Code" = "https://github.com/charlesneimog/py4pd-spt" 
+
+[tool.setuptools]
+packages = ["spt"]
+
+[tool.setuptools.package-data]
+"spt" = ["*", "help/*"] 
+
+[tool.black]
+line-length = 180
+

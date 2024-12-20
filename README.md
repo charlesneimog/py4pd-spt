@@ -7,15 +7,20 @@
 Básica biblioteca de Rastreamento Parcial (Partial Tracking) escrita em Python.
 </p>
 
-<h2 align="center">Instalação</h2>
+### List of Objects
 
-1) Instale `Python`;
-2) Abra PureData, vá até `Help->Find Externals`.
-3) Pesquise e instale `py4pd`.
+### Install
 
-Finalmente, abra o patch `py4pd-spt-help.pd` dentro da pasta Resources e click em `install py4pd-spt`. Reinicie PureData e após isso você terá o objeto `spt.stft`, `spt.pt-live` e `spt.synth~`.
- 
-<h2 align="center">Licença</h2>
+1. Create a new Pure Data patch.
+2. Create a `py4pd` object.
+3. Send a message with `pip install git+https://github.com/charlesneimog/py4pd-spt`.
+4. Restart Pure Data.
+5. Create a new object `py4pd -lib spt`.
+
+All the objects must be avaiable to use now.
+
+
+
 
 
 <a href="https://freesound.org/people/MTG/sounds/246640/">Overall Quality of Single Note - Flute - C4</a> by <a href="https://freesound.org/people/MTG/">MTG</a> | License: <a href="http://creativecommons.org/licenses/by/3.0/">Attribution 3.0</a>

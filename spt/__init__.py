@@ -1,7 +1,6 @@
 import math
 
 import librosa
-import loristrck as lt
 import numpy as np
 import pd
 from scipy.signal.windows import blackman
@@ -239,7 +238,7 @@ def speat_livesynth(peaksList):
     
     return signal
 
-def py4pd_spt_setup():
+def spt_setup():
     pd.add_object(stft_tab, "spt.stft", py_out=True)
 
     # Peak Tracking
