@@ -1,5 +1,0 @@
-librosa
-loristrck
-numpy
-pandas
-scipy

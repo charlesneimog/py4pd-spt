@@ -1,9 +1,25 @@
-import math
-
-import librosa
-import numpy as np
 import pd
-from scipy.signal.windows import blackman
+import math
+import numpy as np
+#import librosa
+
+#from scipy.signal.windows import blackman
+
+def custom_stft(samples, n_fft, hop_length, window):
+    num_frames = 1 + (len(samples) - n_fft) // hop_length
+    padded_samples = np.pad(samples, (0, n_fft), mode="constant")
+    stft_matrix = np.empty((n_fft // 2 + 1, num_frames), dtype=np.complex64)
+    for i in range(num_frames):
+        start = i * hop_length
+        end = start + n_fft
+        frame = padded_samples[start:end] * window
+        fft_result = np.fft.rfft(frame)
+        stft_matrix[:, i] = fft_result
+    return stft_matrix
+    
+def blackman_window(N):
+    n = np.arange(N)  # Indices
+    return 0.42 - 0.5 * np.cos(2 * np.pi * n / (N - 1)) + 0.08 * np.cos(4 * np.pi * n / (N - 1))
 
 
 class PeakList:
@@ -99,8 +115,9 @@ def stft_tab(name):
     sr = pd.get_sample_rate()
     N = 4096
     hop_size = 1024
-    window = blackman(N) # Calcula *\eqinline{x(n) = 0.42 - 0.5 \cdot \cos\left(\frac{2\pi n}{N}\right) + 0.08 \cdot \cos\left(4\pi n / N\right)}*
-    Xk_List = librosa.stft(samples, n_fft=N, hop_length=hop_size, window=window, pad_mode="constant")
+    window = blackman_window(N) # Calcula *\eqinline{x(n) = 0.42 - 0.5 \cdot \cos\left(\frac{2\pi n}{N}\right) + 0.08 \cdot \cos\left(4\pi n / N\right)}*
+    #Xk_List = librosa.stft(samples, n_fft=N, hop_length=hop_size, window=window, pad_mode="constant")
+    Xk_List = custom_stft(samples, n_fft=N, hop_length=hop_size, window=window)
     # sums_stft = np.abs(sftf)
 
     # Normalize
